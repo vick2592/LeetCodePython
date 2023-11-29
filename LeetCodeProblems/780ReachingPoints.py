@@ -1,16 +1,20 @@
 class Solution:
-    def reachingPoints(self, sx, sy, tx, ty, ans = False, count = 0):
-        if ans == True:
-            return ans
-        if count > 10:
-            return ans
+    def reachingPoints(self, sx, sy, tx, ty):
+        print(sx,sy,tx,ty)
+        if sx > tx or sy > ty:
+            return False
         if sx == tx and sy == ty:
-            ans = True
-            print("True")
-            return ans
+            print("Match Found")
+            return True
         
-        self.reachingPoints(sx, sx+sy, tx, ty, ans, count = count + 1)
-        self.reachingPoints(sx+sy, sy, tx, ty, ans, count = count + 1)
+        ans = self.reachingPoints(sx, sx+sy, tx, ty)
+        if ans == True:
+            return True
+        ans = self.reachingPoints(sx+sy, sy, tx, ty)
+        if ans == True:
+            return True
+        
+        return ans  
     
 sx = 1
 sy = 1
