@@ -9,7 +9,7 @@ class Solution:
                 
         ans = ""
         for i in range(len(nums)):
-            if len(nums) - i == 4:
+            if len(nums) - i == 4 and i > 3:
                 ans += nums[i] + nums[i+1] + "-"
                 ans += nums[i+2] + nums[i+3]
                 break
