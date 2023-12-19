@@ -30,6 +30,9 @@ class Solution:
 n = 5
 relations = [[2,1],[3,1],[4,1],[1,5]]
 k = 3
+n = 4
+relations = [[2, 1], [3, 1], [1, 4]]
+k = 2
 
 answer = Solution.minNumberOfSemesters(n, relations, k)
 print(answer)
