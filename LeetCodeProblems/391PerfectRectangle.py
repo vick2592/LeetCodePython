@@ -25,8 +25,10 @@ class Solution:
                         allPoints.remove([m,n])
                     else:
                         return False
-            
-        return True
+        
+        if len(allPoints) == 0:
+            return True
+        return False
     
 rectangles = [[1,1,3,3],[3,1,4,2],[1,3,2,4],[2,2,4,4]]
 rectangles = [[1,1,3,3],[3,1,4,2],[3,2,4,4],[1,3,2,4],[2,3,3,4]]
