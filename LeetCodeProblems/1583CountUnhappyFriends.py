@@ -30,3 +30,5 @@ pairs = [[0, 1], [2, 3]]
 
 answer = Solution.unhappyFriends(n, preferences, pairs)
 print(answer)
+
+
