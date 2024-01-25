@@ -10,7 +10,9 @@ class Solution:
     def isScramble(self, s1, s2):
         found = False
         def catalan(n):
-            return math.comb(2*n, n) // (n + 1)
+            c = math.comb(2*n, n) // (n + 1)
+            print("The catalan number and max combinations are: ", c, 2**c)
+            return 2**c
         #@cache
         def recurseSplit(s):
             if len(s) == 1:
@@ -39,10 +41,12 @@ class Solution:
                 self.dp.append(test2)
         print(self.dp)
         print(recurseSplit(s1))
+        cn = catalan(len(s1)-1)
+        count = 0
         while(found != True):
             #testS = deepcopy(s1)
             splitList = recurseSplit(s1)
-            print(splitList)
+            #print(splitList)
             while(len(splitList)) != len(s1):
                 tempList = []
                 for i in splitList:
@@ -56,8 +60,12 @@ class Solution:
             if newS == s2:
                 found = True
                 #break
-            if len(self.dp) == catalan(len(s1)):
+            if len(self.dp) == cn:
                 break
+            count += 1
+            if count > cn:
+                break
+            print(count, cn)
         print(self.dp)
         return found
     
