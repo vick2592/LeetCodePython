@@ -76,47 +76,5 @@ s2 = "rgeat"
 answer = Solution()
 
 print(answer.isScramble(s1, s2))
-
-
-        # queueList = []
-        # queueList.append(s1)
-        # self.dp.append(s1)
-        # while(len(queueList) > 0):
-        #     s1 = queueList.pop(0)
-        #     for x in range(0, len(s1)):
-        #         s1Left = s1[:x]
-        #         s1Right = s1[x:]
-        #         test1 = s1Left + s1Right
-        #         test2 = s1Right + s1Left
-        #         print(test1, test2)
-        #         if test1 not in self.dp:
-        #             queueList.append(test1)
-        #             self.dp.append(test1)
-        #         if test2 not in self.dp:
-        #             queueList.append(test2)
-        #             self.dp.append(test2)
-        # if (s1 not in self.dp):
-        #     self.dp.append(s1)
-        # else:
-        #     return
-        # if len(s1) == 1:
-        #     if s1 == s2:
-        #         return True
-        #     else:
-        #         return False
-            
-        # if len(s1) > 1:
-        #     randomNum = random.randint(1, len(s1))
-            
-        # s1Left = s1[:randomNum]
-        # s1Right = s1[randomNum:]
-        # test1 = s1Left + s1Right
-        # test2 = s1Right + s1Left
-        # print(test1, test2)
-        # self.isScramble(test1, s2) 
-        #     # if test1 == s2:
-        #     #     return True 
-
-        # self.isScramble(test2, s2) 
-        #     # if test2 == s2:
-        #     #     return True 
+n = 4
+print(math.comb(2*n, n) - math.comb(2*n, n-1))
