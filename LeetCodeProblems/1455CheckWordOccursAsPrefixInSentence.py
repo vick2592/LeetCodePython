@@ -6,12 +6,7 @@ class Solution:
         enumL = [[0,1,2], [0,2,1], [1,0,2], [1,2,0], [2,1,0], [2,0,1]]
         permL = list(permutations(range(len(cuboids)), len(cuboids)))
         #print(permL)
-        # for p in permL:
-        #     tempList = []
-        #     for i in p:
-        #         tempList.append(cuboids[i])
-        #     for t in tempList:
-        #         for e in enumL:
+
         sortL = []
         i = 0
         for c in cuboids:
@@ -30,7 +25,6 @@ class Solution:
                 tempL.append(newList[k])
             ThreeDList.append(tempL)
             
-            
         #print(ThreeDList)     
         #print(newList)
         for e in range(len(ThreeDList)):
@@ -43,7 +37,6 @@ class Solution:
                     testList1.append(ThreeDList[e][a][b[1]])
                     testList1.append(ThreeDList[e][a][b[2]])
                     #print(testList)
-                    #tempHeight = testList1[2]
                     tempHeight = testList1[2]
                     for c in range(a+1, len(ThreeDList[e])):
                         prevHeight = 0
@@ -60,7 +53,6 @@ class Solution:
                                 prevHeight = testList2[2]
                                 tempHeight += testList2[2]
                             #print(d, testList2, testList1, prevHeight, tempHeight)
-                        #tempHeight += prevHeight
                         #print("Level of c and tempheight: ", c, tempHeight)
                     if height < tempHeight:
                         height = tempHeight
