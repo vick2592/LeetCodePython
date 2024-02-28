@@ -9,10 +9,10 @@ class Solution:
             if s[i] != "*":
                 if int(s[i]) == 0:
                     continue
-            elif len(s) - i - 1 > 0 and s[i+1] != "*":
+            if len(s) - i - 1 > 0 and s[i+1] != "*":
                 if int(s[i]+s[i+1]) in twoways:
                     queue.append(int(s[i]))
-                    queue.append(int(s[i] + s[i+1]))
+                    queue.append(int(s[i+1]))
                 if int(s[i]+s[i+1]) in oneway:
                     queue.append(int(s[i]+s[i+1]))
             elif s[i] == "*":
@@ -49,6 +49,6 @@ class Solution:
         
         return len(queue) % mod
     
-s = "*"
+s = "1*"
 ans = Solution()
 print(ans.numDecodings(s))
