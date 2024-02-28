@@ -2,14 +2,19 @@ class Solution:
     def numDecodings(self, s):
         mod = 10**9 + 7
         twoways = [n for n in range(11,27)]
-        oneway = [n for n in range(1,10)]
+        oneway = [n for n in range(1,11)]
         count = 0
         queue = []
         for i in range(len(s)):
-            if len(s) - i - 1 > 0 and s[i+1] != "*":
+            if s[i] != "*":
+                if int(s[i]) == 0:
+                    continue
+            elif len(s) - i - 1 > 0 and s[i+1] != "*":
                 if int(s[i]+s[i+1]) in twoways:
                     queue.append(int(s[i]))
-                    queue.append(int(s[i+1]))
+                    queue.append(int(s[i] + s[i+1]))
+                if int(s[i]+s[i+1]) in oneway:
+                    queue.append(int(s[i]+s[i+1]))
             elif s[i] == "*":
                 queue.append(1)
                 queue.append(2)
