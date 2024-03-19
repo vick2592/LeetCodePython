@@ -33,19 +33,6 @@ class Solution:
                     break
             if stillZero == False:
                 break
-        # ZeroSum = False
-        # test = head[0]
-        # x = 0
-        # while x != len(head)-1:
-        #     test += head[x + 1]
-        #     print(test)
-        #     if test == 0:
-        #         ZeroSum = True
-        #         head.pop(x + 1)
-        #         x = 0
-        #         test = head[0]
-        #     x += 1
-        
         return head
     
 head = [1,2,-3,3,1]
