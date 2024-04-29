@@ -1,22 +1,17 @@
 class Solution:
-    def isCircularSentence(sentence):
-        def helper(sentence):
-            words = sentence.split()
-            checker = True
-            for i in range(len(words)-1):
-                if (words[i][-1] == words[i+1][0]):
-                    continue
-                else:
-                    checker = False
-                    break
-            return checker
-        if (sentence[0] == sentence[-1]):
-            return True
-        elif (helper(sentence)):
-            return True
-        else:
-            return False
-       
-sentence = "leetcode exercises sound delightful"
-sentence = "Leetcode is cool"
-print(Solution.isCircularSentence(sentence)) # True
+    def countGoodNumbers(n):
+        odd = 5
+        even = 4
+        count = 1
+        for i in range(n):
+            if (i % 2 == 0):
+                count *= odd
+            else:
+                count *= even
+
+        mod = 10**9 + 7
+        return count % mod
+    
+
+n = 50
+print(Solution.countGoodNumbers(n)) # 400
