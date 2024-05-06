@@ -36,18 +36,7 @@ class Encrypter:
                     #print(encrypted_word, word2)
                     num += 1
         print("The decrypted number of words is: ", num)
-    # def decrypt(self, word2):
-    #     num = 1
-    #     testDict = {}
-    #     for i in range(len(self.w2k)):
-    #         if self.w2k[i] not in testDict:
-    #             testDict[self.w2k[i]] = 0
-    #     for i in range(len(self.w2k)):
-    #         testDict[self.w2k[i]] += 1
-    #     for i in testDict.values():
-    #         num *= i
-    #     print(testDict)
-    #     print("The decrypted number of words is: ", num)
+
         
 
 keys = ['a', 'b', 'c', 'd']
