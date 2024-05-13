@@ -8,7 +8,10 @@ class Solution:
                 numMap[i] = 1
         print(numMap)
         ans = sorted(numMap.items(), key = lambda x: (x[1], -x[0]))
-        return ans
+        test = []
+        for j in ans:
+            test += [j[0]] * j[1]
+        return test
 
 nums = [2,3,1,3,2]
 print(Solution.frequencySort(nums)) #[1,3,3,2,2]
