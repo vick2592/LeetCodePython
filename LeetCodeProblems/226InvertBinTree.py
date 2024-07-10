@@ -19,6 +19,7 @@ class Solution:
             return None
         root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
         return root
+    
     def printTree(self, node, level=0):
         if (node != None):
             self.printTree(node.left, level + 1)
