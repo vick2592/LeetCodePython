@@ -2,7 +2,7 @@ from copy import deepcopy
 
 class Solution:
     def shortestPath(grid, k):
-        def shortestPath(grid):
+        def shortestPathCount(grid):
             visited = [[0 for x in range(len(grid[0]))] for y in range(len(grid))]
             #print(visited)
             queue = [[0, 0, 0]]
@@ -17,7 +17,7 @@ class Solution:
                             visited[nx][ny] = 1
                             queue.append([nx, ny, steps + 1])
             return -1
-        print(shortestPath(grid))
+        #print(shortestPathCount(grid))
         collection = []
         def recursiveInsert(grid, k):
             if k >= 0:
@@ -36,7 +36,7 @@ class Solution:
         
         smallest = 10**9+7
         for i in range(len(collection)):
-            smallest = min(smallest, shortestPath(collection[i]))
+            smallest = min(smallest, shortestPathCount(collection[i]))
         return smallest
     
 grid = [[0,0,0],[1,1,0],[0,0,0],[0,1,1],[0,0,0]]
